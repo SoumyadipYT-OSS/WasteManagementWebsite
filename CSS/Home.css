@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=MuseoModerno:wght@300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/new_wmbg1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(7.2px); 
+  opacity: 0.8;
+  z-index: -1; 
+}
+
+:root {
+  --clr: rgb(56, 56, 38);
+}
+
+/* Navbar css design */
+
+.navigation_body {
+  display: flex;
+  justify-content: center;
+  margin-top: -8.2px;
+  min-height: 100vh;
+  background: transparent;
+  z-index: 5;
+}
+
+.navigation {
+  position: absolute;
+  width: 99.8%;
+  height: 100px;
+  background-image: url('../images/WasteMining.gif');
+  background-position: center;
+  background-size: 20% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.navigation {
+  animation: gif-repeat1 infinite 1s;
+}
+
+.navigation ul {
+  display: flex;
+  width: 350px;
+  margin-left: -10%;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 52px;
+  z-index: 1;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  padding-left: 40px;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.8em;
+  text-align: center;
+  transition: 0.5s;
+  color: rgb(88, 80, 0);
+}
+
+.navigation ul li.active a .icon {
+  transform: translateY(-11px);
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  color: rgb(195, 255, 0);
+  font-weight: 500;
+  font-size: 0.8em;
+  letter-spacing: 0.03em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(20px);
+}
+
+.indicator {
+  position: absolute;
+  top: -.1%;
+  width: 96px;
+  height: 96px;
+  background: radial-gradient(rgb(214, 148, 169), rgb(0, 0, 93));
+  border-radius: 50%;
+  border: 5px solid transparent;
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20.4125px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 transparent;
+}
+
+.indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -20.4125px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 transparent;
+}
+
+.navigation ul li:nth-child(1).active~.indicator {
+  transform: translateX(calc(7.5px * 1));
+}
+
+.navigation ul li:nth-child(2).active~.indicator {
+  transform: translateX(calc(75px * 1));
+}
+
+.navigation ul li:nth-child(3).active~.indicator {
+  transform: translateX(calc(71.89px * 2));
+}
+
+.navigation ul li:nth-child(4).active~.indicator {
+  transform: translateX(calc(71px * 3));
+}
+
+.navigation ul li:nth-child(5).active~.indicator {
+  transform: translateX(calc(70.1999px * 4));
+}
+
+.navigation ul li:nth-child(6).active~.indicator {
+  transform: translateX(calc(70.2px * 5));
+}
+
+/* End of Navbar CSS */
+
+
+
+
+
+
+
+
+/* username design */
+
+.action {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 6;
+}
+
+.action .profile {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.action .profile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.action .menu {
+  position: absolute;
+  top: 72px;
+  right: -10px;
+  padding: 10px 20px;
+  background: #ecedff;
+  width: 200px;
+  box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.action .menu.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.action .menu::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: #ecedff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 0;
+  font-weight: 500;
+  color: #434040;
+  line-height: 1.2em;
+}
+
+.action .menu h3 span {
+  font-size: 14px;
+  color: #848484;
+  font-weight: 400;
+}
+
+.action .menu ul li {
+  list-style: none;
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+}
+
+.action .menu .icon {
+  font-size: 18px;
+  padding-top: 4px;
+}
+
+.action .menu ul li img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover img {
+  opacity: 1;
+}
+
+.action .menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover .icon{
+  color: rgb(219, 0, 95);
+}
+
+.action .menu ul li:hover a{
+  color: rgb(219, 0, 95);
+}
+
+/* End of username CSS */
+
+
+
+
+
+
+
+
+/* Map */
+/*--------------------------------------------------------------------------------------*/
+.container_mainmap {
+  width: 70%;
+  margin-left: 15%;
+  background-image: url('../images/city.gif');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 430px;
+  border-radius: 12px;
+  margin-top: -44%;
+}
+
+#mainmap {
+  background: transparent;
+  height: 429px;
+  width: 85%;
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: dashed;
+  border-color: rgb(53, 43, 114);
+  margin-left: 55.8%;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+
+
+
+/* Text Area */
+.textarea {
+  height: 150px;
+  border-radius: 12px;
+  margin-left: 9%;
+  margin-right: 8%;
+  margin-top: 1%;
+  margin-bottom: 10%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s, filter 0.3s;
+}
+.textarea span {
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  /* margin-left: 40%; */
+  /* font-family: 'MuseoModerno', cursive; */
+  font-family: Amatic SC;
+  color: rgb(126, 109, 0);
+  font-size: 54px;
+  font-weight: 800;
+}
+.textarea p {
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2%;
+  font-family: 'MuseoModerno', cursive;
+  /* font-family: DM sans, sans-serif; */
+  color: rgb(65, 46, 3);
+  font-size: 22px;
+  font-weight: 600;
+  transition: transform 0.3s;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.textarea p.in-view {
+  opacity: 1;
+}
+.textarea:hover {
+  cursor: crosshair;
+  transform: scale(1.05);
+}
+.txtp:hover {
+  transform: scale(1.03);
+}
+/* ---------------End of text area--------------------- */
+
+
+
+
+/* Bootstrap caraousal */
+.carousel-inner {
+  background-color: rgb(26, 26, 23);
+  transition-duration: 0.5s;
+}
+.text1 {
+  margin-left: 52%;
+  margin-top: -26.8%;
+  height: 393px;
+  margin-bottom: 0;
+  margin-right: 7%;
+}
+.text1 h3 {
+  padding-left: 10%;
+  padding-top: 4px;
+  height: auto;
+  font-family: Amatic SC;
+  font-size: 55px;
+  font-weight: 700;
+  color: #ffa200;
+}
+.text1 p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 19px;
+  height: 255.5px;
+  border-radius: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  font-weight: normal;
+  color: #744800;
+  animation: fade-in1 2s;
+}
+@keyframes fade-in1 {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.text2 {
+  color: white;
+  margin-left: 7.5%;
+  margin-top: -27.44%;
+  height: 403.8px;
+  width: 41%;
+  margin-bottom: 0;
+  margin-right: 7%;
+}
+.text2 h3 {
+  padding-left: 10%;
+  padding-top: 4px;
+  height: auto;
+  font-family: Amatic SC;
+  font-size: 55px;
+  font-weight: 700;
+  color: #ffa200;
+}
+.text2 p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 19px;
+  height: 262.5px;
+  border-radius: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  font-weight: normal;
+  color: #744800;
+  animation: fade-in2 2s;
+}
+@keyframes fade-in2 {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#firstBootstraps {
+  margin-left: 8%;
+  display: list-item;
+  height: 392.5px;
+  width: 40%;
+  border-color: rgb(255, 175, 70);
+  border-radius: 12px;
+  border-width: 2px;
+  background-image: url('../images/wmbg2.jpg');
+  background-position: center;
+  background-size: cover;
+  display: grid;
+}
+#secondBootstraps {
+  margin-left: 52.2%;
+  margin-top: 5%;
+  display: list-item;
+  height: 402px;
+  width: 41%;
+  border-color: rgb(255, 175, 70);
+  border-radius: 12px;
+  border-width: 2px;
+  background-image: url('../images/wmbg2.jpg');
+  background-position: center;
+  background-size: cover;
+  display: grid;
+}
+.carousel-inner {
+  background-size: cover;
+  border-radius: 12px;
+}
+
+.carousel-inner img {
+  opacity: 0.8;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.carousel-caption {
+  position: relative;
+  left: 0;
+  top: 0;
+  padding-left: 0.8%;
+}
+
+.carousel-caption h3 {
+  font-size: 2.8rem;
+  color: rgb(255, 157, 0);
+  font-weight: 600;
+}
+
+.carousel-caption p {
+  font-size: 1.6rem;
+  color: rgb(183, 255, 0);
+  font-weight: bold;
+}
+
+
+a:-webkit-any-link {
+  color: rgb(35, 61, 12);
+  cursor: pointer;
+  text-decoration: underline;
+}
+a:not([href]):not([tabindex]) {
+  color: rgb(30, 60, 0);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.thm-btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 12px;
+  outline: none !important;
+  outline-color: initial !important;
+  outline-style: none !important;
+  outline-width: initial !important;
+  background-color: rgb(221, 214, 0);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 17px 50px 16px;
+  -webkit-transition: all 0.5s linear;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  transition-property: all;
+  transition: all 0.5s linear;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  transition-property: all;
+  margin-top: 15%;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.thm-btn {
+  /* Add your existing styles for .thm-btn here */
+  animation: translateYOpacityInOut 6s;
+}
+
+@keyframes translateYOpacityInOut {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+/*---------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-image: url('../images/wmbg2.png');
+  background-position: center;
+  background-size: cover;
+  padding: 25px;
+}
+#footer p {
+  font-family: Amatic SC;
+  font-size: 30px;
+  letter-spacing: 0.05em;
+  font-weight: bolder;
+}
