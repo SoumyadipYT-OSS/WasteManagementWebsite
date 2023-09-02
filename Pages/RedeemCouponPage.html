@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReedemPage</title>
+    <link rel="stylesheet" href="../CSS/RedeemCouponPage.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <!-- UserName -->
+    <div class="mt-2 ml-[88%]" id="userName">
+        <div class="action">
+            <div class="profile" onclick="profileAttributes();">
+                <img src="../images/profile.png" alt="image not load">
+            </div>
+            <div class="menu">
+                <h3>
+                    Tom Cruise 
+                    <br>
+                    <span class="underline-offset-1">
+                        tomcruise@123
+                    </span>
+                </h3>
+
+                <ul onclick="profileListAttribute();">
+                    <li>
+                        <span class="icon">
+                            <ion-icon name="create-outline"></ion-icon>
+                        </span>
+                            &nbsp;
+                        <a href="#">Edit Profile</a>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <ion-icon name="mail-open-outline"></ion-icon>
+                        </span>
+                            &nbsp;
+                        <a href="#">Inbox</a>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <ion-icon name="help-circle-outline"></ion-icon>
+                        </span>
+                            &nbsp;
+                        <a href="#">Help</a>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                            &nbsp;
+                        <a href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Navbar -->
+    <div class="navigation_body">
+        <div class="navigation">
+            <ul onclick="navbarAttributes();">
+                <li class="list">
+                    <a href="../Pages/Index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="send-outline"></ion-icon>
+                        </span>
+                        <span class="text">Requests</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="bag-handle-outline"></ion-icon>
+                        </span>
+                        <span class="text">Pickup</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="ticket-outline"></ion-icon>
+                        </span>
+                        <span class="text">Redeem Coupon</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-in-outline"></ion-icon>
+                        </span>
+                        <span class="text">Login /<br> SignUp</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- User Redeem Points Available -->
+    <div class="redeemPoints">
+        <span></span>
+        <h2 class="points">98</h2>
+        <p class="rpp">Your Available redeem points, use these points to purchase coupon card</p>
+    </div>
+    <!-- End of Redeem Points -->
+
+
+
+
+    <!-- Redeem UI card -->
+    <div class="container">
+        <div class="content-section">
+            <div class="coupon-card">
+                <img src="../images/logo.png" alt="" class="logo">
+                <h3>20% flat off on all rides within the city using Credit Card</h3>
+    
+                <div class="coupon-row">
+                    <span id="cpnCode">STEALDEAL</span>
+                    <button id="cpnBtn">COPY CODE</button>
+                </div>
+    
+                <p>Valid Till: <span>25th Nov, 2023</span></p>
+            </div>
+            <div class="coupon-card">
+                <img src="../images/logo1.png" alt="" class="logo">
+                <h3>20% flat off on all rides within the city using Credit Card</h3>
+    
+                <div class="coupon-row">
+                    <span id="cpnCode">STEALDEAL</span>
+                    <button id="cpnBtn">COPY CODE</button>
+                </div>
+    
+                <p>Valid Till: <span>25th Nov, 2023</span></p>
+            </div>
+            <div class="coupon-card">
+                <img src="../images/logo2.png" alt="" class="logo">
+                <h3>20% flat off on all rides within the city using Credit Card</h3>
+    
+                <div class="coupon-row">
+                    <span id="cpnCode">STEALDEAL</span>
+                    <button id="cpnBtn">COPY CODE</button>
+                </div>
+    
+                <p>Valid Till: <span>25th Nov, 2023</span></p>
+            </div>
+            <div class="coupon-card">
+                <img src="../images/logo3.png" alt="" class="logo">
+                <h3>20% flat off on all rides within the city using Credit Card</h3>
+    
+                <div class="coupon-row">
+                    <span id="cpnCode">STEALDEAL</span>
+                    <button id="cpnBtn">COPY CODE</button>
+                </div>
+    
+                <p>Valid Till: <span>25th Nov, 2023</span></p>
+            </div>
+            <div class="coupon-card">
+                <img src="../images/logo4.png" alt="" class="logo">
+                <h3>20% flat off on all rides within the city using Credit Card</h3>
+    
+                <div class="coupon-row">
+                    <span id="cpnCode">STEALDEAL</span>
+                    <button id="cpnBtn">COPY CODE</button>
+                </div>
+    
+                <p>Valid Till: <span>25th Nov, 2023</span></p>
+            </div>
+            <div class="coupon-card">
+                <img src="../images/logo5.png" alt="" class="logo">
+                <h3>20% flat off on all rides within the city using Credit Card</h3>
+    
+                <div class="coupon-row">
+                    <span id="cpnCode">STEALDEAL</span>
+                    <button id="cpnBtn">COPY CODE</button>
+                </div>
+    
+                <p>Valid Till: <span>25th Nov, 2023</span></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+    <!-- Redeem Button -->
+    <div class="redeemBUTTON">
+        <a href="#" class="a">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <Button class="redeemButton">Redeem coupon</Button>
+        </a>
+    </div>
+</body>
+<script src="../JS/RedeemCouponPage.js"></script>
+</html>
