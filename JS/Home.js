@@ -30,7 +30,7 @@ if (navigator.geolocation) {
       const userLng = position.coords.longitude;
 
       // Store the user's location in Firebase
-      const userId = "user1"; // Replace with the user's unique identifier
+      const userId = "main"; // Replace with the user's unique identifier
       set(ref(database, userId), {
         latitude: userLat,
         longitude: userLng

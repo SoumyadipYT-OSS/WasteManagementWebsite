@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
+
 <body>
     <!-- UserName -->
     <div class="mt-2 ml-[88%]" id="userName">
@@ -18,7 +20,7 @@
             </div>
             <div class="menu">
                 <h3>
-                    Tom Cruise 
+                    Tom Cruise
                     <br>
                     <span class="underline-offset-1">
                         tomcruise@123
@@ -30,28 +32,28 @@
                         <span class="icon">
                             <ion-icon name="create-outline"></ion-icon>
                         </span>
-                            &nbsp;
+                        &nbsp;
                         <a href="#">Edit Profile</a>
                     </li>
                     <li>
                         <span class="icon">
                             <ion-icon name="mail-open-outline"></ion-icon>
                         </span>
-                            &nbsp;
+                        &nbsp;
                         <a href="#">Inbox</a>
                     </li>
                     <li>
                         <span class="icon">
                             <ion-icon name="help-circle-outline"></ion-icon>
                         </span>
-                            &nbsp;
+                        &nbsp;
                         <a href="#">Help</a>
                     </li>
                     <li>
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
-                            &nbsp;
+                        &nbsp;
                         <a href="#">Logout</a>
                     </li>
                 </ul>
@@ -127,7 +129,7 @@
     <!-- User Redeem Points Available -->
     <div class="redeemPoints">
         <span></span>
-        <h2 class="points">98</h2>
+        <h2 class="points" id="Redeempoint">0</h2>
         <p class="rpp">Your Available redeem points, use these points to purchase coupon card</p>
     </div>
     <!-- End of Redeem Points -->
@@ -141,67 +143,67 @@
             <div class="coupon-card">
                 <img src="../images/logo.png" alt="" class="logo">
                 <h3>20% flat off on all rides within the city using Credit Card</h3>
-    
+
                 <div class="coupon-row">
                     <span id="cpnCode">STEALDEAL</span>
                     <button id="cpnBtn">COPY CODE</button>
                 </div>
-    
+
                 <p>Valid Till: <span>25th Nov, 2023</span></p>
             </div>
             <div class="coupon-card">
                 <img src="../images/logo1.png" alt="" class="logo">
                 <h3>20% flat off on all rides within the city using Credit Card</h3>
-    
+
                 <div class="coupon-row">
                     <span id="cpnCode">STEALDEAL</span>
                     <button id="cpnBtn">COPY CODE</button>
                 </div>
-    
+
                 <p>Valid Till: <span>25th Nov, 2023</span></p>
             </div>
             <div class="coupon-card">
                 <img src="../images/logo2.png" alt="" class="logo">
                 <h3>20% flat off on all rides within the city using Credit Card</h3>
-    
+
                 <div class="coupon-row">
                     <span id="cpnCode">STEALDEAL</span>
                     <button id="cpnBtn">COPY CODE</button>
                 </div>
-    
+
                 <p>Valid Till: <span>25th Nov, 2023</span></p>
             </div>
             <div class="coupon-card">
                 <img src="../images/logo3.png" alt="" class="logo">
                 <h3>20% flat off on all rides within the city using Credit Card</h3>
-    
+
                 <div class="coupon-row">
                     <span id="cpnCode">STEALDEAL</span>
                     <button id="cpnBtn">COPY CODE</button>
                 </div>
-    
+
                 <p>Valid Till: <span>25th Nov, 2023</span></p>
             </div>
             <div class="coupon-card">
                 <img src="../images/logo4.png" alt="" class="logo">
                 <h3>20% flat off on all rides within the city using Credit Card</h3>
-    
+
                 <div class="coupon-row">
                     <span id="cpnCode">STEALDEAL</span>
                     <button id="cpnBtn">COPY CODE</button>
                 </div>
-    
+
                 <p>Valid Till: <span>25th Nov, 2023</span></p>
             </div>
             <div class="coupon-card">
                 <img src="../images/logo5.png" alt="" class="logo">
                 <h3>20% flat off on all rides within the city using Credit Card</h3>
-    
+
                 <div class="coupon-row">
                     <span id="cpnCode">STEALDEAL</span>
                     <button id="cpnBtn">COPY CODE</button>
                 </div>
-    
+
                 <p>Valid Till: <span>25th Nov, 2023</span></p>
             </div>
         </div>
@@ -212,7 +214,7 @@
 
 
 
-    
+
     <!-- Redeem Button -->
     <div class="redeemBUTTON">
         <a href="#" class="a">
@@ -223,6 +225,55 @@
             <Button class="redeemButton">Redeem coupon</Button>
         </a>
     </div>
+
+   
+
 </body>
 <script src="../JS/RedeemCouponPage.js"></script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
+    import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyAcTvZ4CsSHVyR3qnKFEBFj-EWm-39t1Zw",
+        authDomain: "wastemanagementsystem-101.firebaseapp.com",
+        databaseURL: "https://wastemanagementsystem-101-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "wastemanagementsystem-101",
+        storageBucket: "wastemanagementsystem-101.appspot.com",
+        messagingSenderId: "198727372594",
+        appId: "1:198727372594:web:49ebda1274cb08b087912b",
+        measurementId: "G-1YHL30YKMV"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+
+    // <!-- Getting value from database---->
+
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, "users/"))
+    .then((snapshot) => {
+        if (snapshot.exists()) {
+            console.table(snapshot.val());
+        } else {
+           console.table("No data available");
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
+    
+
+</script>
+
 </html>
