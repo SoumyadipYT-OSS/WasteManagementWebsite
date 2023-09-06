@@ -1,0 +1,219 @@
+
+
+.requestinfo{
+   margin-left: 0px;
+   padding-left: 0px;
+  
+}
+.request{
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left: 0px;
+    margin: 0px;
+}
+.f1,.f2,.f3
+{
+    font-family: 'PT Serif', serif;
+}
+
+/* button CSS */
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 350ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  font-family: 'PT Serif', serif;
+}
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 600;
+}
+.button-6:hover {
+  transform: translateY(-1px);
+}
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+.timebut
+{
+    margin-left: 5px;
+}
+.requestbutton{
+    margin-left: 20px;
+}
+
+/* Previous Request */
+.prevheading{
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'PT Serif', serif;
+
+}
+
+
+
+
+/* Cards css */
+.c1{
+  margin-bottom: 20px;
+  margin-top:10px;
+  border-radius: 200px;
+}
+/* Add a smooth zoom-in effect */
+.card-zoom {
+  transition: transform 0.3s ease;
+}
+
+/* Zoom effect on hover */
+.card-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Initially hide the button, show it only on card hover */
+.btn-zoom {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-zoom:hover .btn-zoom {
+  opacity: 1;
+}
+
+/* Card configuration */
+.card-body{
+  border: 5px;
+  margin: 1px;
+}
+.gen{
+  background-image:url("https://blog.roberthallam.org/wp-content/uploads/2022/09/loading-win98-transparent.gif"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  font-weight: bold;
+}
+.ong{
+  background-image:url("https://media.tenor.com/zytBwrhHQm8AAAAi/garbage-trash.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  font-weight: bold;
+}
+.comp{
+  background-image:url("https://media.tenor.com/IhzgisD8ORcAAAAM/tik.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  font-weight: bold;
+}
+.canc{
+  background-image:url("https://static.thenounproject.com/png/2843287-200.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  font-weight: bold;
+}
+/* Style for the "generated" cards */
+.card-body.gen {
+  border-radius: 10px; 
+  opacity: 0.8; 
+  background-color: #f0f0f0; 
+}
+.card-body.gen .card-status {
+  color:rgb(225, 133, 3);
+}
+.card-body.gen .card-time {
+  color:rgb(50, 6, 36);
+}
+
+/* Style for the "ongoing" cards */
+.card-body.ong {
+  border-radius: 10px; 
+  opacity: 0.8; 
+  background-color:#f0f0f0; 
+}
+.card-body.ong .card-status {
+  color:rgba(6, 97, 115, 0.936);
+}
+.card-body.ong .card-time {
+  color:rgb(50, 6, 36);
+}
+
+
+/* Style for the "completed" cards */
+.card-body.comp {
+  border-radius: 10px; 
+  opacity: 0.8; 
+  background-color: #f0f0f0; 
+}
+.card-body.comp .card-status {
+  color:rgba(86, 215, 16, 0.936);
+}
+.card-body.comp .card-time {
+  color:rgb(50, 6, 36);
+}
+
+/* Style for the "cancelled" cards */
+.card-body.canc {
+  border-radius: 10px; 
+  opacity: 0.8; 
+  background-color: #d0d0d0; 
+}
+.card-body.canc .card-status {
+  color:rgb(255, 0, 0);
+}
+.card-body.canc .card-time {
+  color:rgb(50, 6, 36);
+}
+
+
+
+/* Style for the title */
+.card-title {
+  color: #01162c; 
+}
+
+/* Style for the status text */
+.card-text {
+  color: #28a745; /* Green color for "ongoing" */
+}
+
+
+
+.delbut{
+  color: red;
+  transition: opacity 0.4s ease;
+  font-size:150%;
+}
+.delbut:hover{
+  background-color: rgba(212, 31, 31, 0.929);
+  color: rgb(251, 251, 251);
+  font-weight: bold;
+}
