@@ -129,7 +129,7 @@
     <!-- User Redeem Points Available -->
     <div class="redeemPoints">
         <span></span>
-        <h2 class="points" id="Redeempoint">0</h2>
+        <h2 class="points" id="Redeempoint">Loading...</h2>
         <p class="rpp">Your Available redeem points, use these points to purchase coupon card</p>
     </div>
     <!-- End of Redeem Points -->
@@ -226,7 +226,7 @@
         </a>
     </div>
 
-   
+
 
 </body>
 <script src="../JS/RedeemCouponPage.js"></script>
@@ -261,18 +261,31 @@
 
     // <!-- Getting value from database---->
 
-    const dbRef = ref(getDatabase());
-    get(child(dbRef, "users/"))
-    .then((snapshot) => {
-        if (snapshot.exists()) {
-            console.table(snapshot.val());
-        } else {
-           console.table("No data available");
-        }
-    }).catch((error) => {
-        console.error(error);
-    });
-    
+    const db = getDatabase();
+    const usersRef = ref(db, "users");
+
+    // Retrieve data for all users
+    get(usersRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                const usersData = snapshot.val();
+                // Iterate through the users and access the "InitialPoint" value for each user
+                for (const userId in usersData) {
+                    if (usersData.hasOwnProperty(userId)) {
+                        const initialPoint = usersData[userId].InitialPoint;
+                        const redeemPointElement = document.getElementById("Redeempoint");
+                        redeemPointElement.textContent = initialPoint;
+                        console.log(`User ID: ${userId}, Initial Point: ${initialPoint}`);
+                    }
+                }
+            } else {
+                console.log("No user data found.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+
 
 </script>
 
