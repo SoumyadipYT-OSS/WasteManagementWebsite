@@ -2,7 +2,7 @@
 //===================================================================================================================================================
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -39,6 +39,23 @@ if (navigator.geolocation) {
           console.log("User location stored successfully.");
 
 
+          let userRef;
+          let userData;
+          userRef = ref(database, "users");
+
+          // Listen for changes to the user's data
+          onValue(userRef, (snapshot) => {
+            userData = snapshot.val();
+            var data = snapshot.val();
+            for (const userId in data) {
+              if (data.hasOwnProperty(userId)) {
+                const uid = data[userId].username;
+                const userName = document.getElementById("username");
+                userName.textContent = uid;
+
+              }
+            }
+          })
           // Map configuration
           //===================================================================================================================================================
           // Define the tile layer using OpenStreetMap_DE URL and options.
